@@ -1,51 +1,70 @@
-# GoLedger Challenge
+# Getting Started with Create React App
 
-In this challenge you will create a web interface to a blockchain application. In this application you must implement a streming service-like interface, with artist, album, song and playlist registration.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Requirements
+## Available Scripts
 
-- Your application should be able to add/remove/edit and show all artists, albums, songs and playlists;
-- Use **React** or **Next.js** (all UI libraries are allowed);
+In the project directory, you can run:
 
-## Instructions
+### `npm start`
 
-- Fork the repository [https://github.com/goledgerdev/goledger-challenge-web](https://github.com/goledgerdev/goledger-challenge-web)
-    - Fork it, do **NOT** clone it, since you will need to send us your forked repository
-    - If you **cannot** fork it, create a private repository and give access to `samuelvenzi` and `jefo3`.
-- Create an web application using React. You will implement the basic operations provided by the API, which are `Create`, `Update`, `Delete` and `Search`.
-- Improve your application with a beautiful UI.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Server
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-The data are obtained using a rest server at this address: `http://ec2-54-91-215-149.compute-1.amazonaws.com`
+### `npm test`
 
-Also, a Swagger with the endpoints specifications for the operations is provided at this address: `http://ec2-54-91-215-149.compute-1.amazonaws.com/api-docs/index.html`.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Note: The API is protected with Basic Auth. The credentials were sent to you by email.
+### `npm run build`
 
-Tip: execute each operation in the Swagger for information on payload format and endpoint addresses. See examples below.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Get Schema
-Execute a `getSchema` operation to get information on which asset types are available. Don't forget to authenticate with the credentials provided.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```bash
-curl -X GET "http://ec2-54-91-215-149.compute-1.amazonaws.com/api/query/getSchema" -H "accept: */*"
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Execute a getSchema with a payload to get more details on a particula asset.
+### `npm run eject`
 
-```bash
-curl -X POST "http://ec2-54-91-215-149.compute-1.amazonaws.com/api/query/getSchema" -H "accept: */*" -H "Content-Type: application/json" -d "{\"assetType\":\"artist\"}"
-```
-Tip: the same can be done with transactions, using the `getTx` endpoint.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Search
-Perform a search query on a particular asset type.
-```bash
-curl -X POST "http://ec2-54-91-215-149.compute-1.amazonaws.com/api/query/search" -H "accept: */*" -H "Content-Type: application/json" -d "{\"query\":{\"selector\":{\"@assetType\":\"artist\"}}}"
-```
-Tip: to read a specific asset, you can use the `readAsset` endpoint.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Complete the challenge
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-To complete the challenge, you must send us the link to your forked repository with the code of your application. Please, provide instructions to execute the code.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
